@@ -1,6 +1,7 @@
 import './App.css';
 import Add from './components/add';
 import List from './components/list';
+import Center from './components/data/center';
 import { useState, useEffect } from 'react';
 
 const getFestivals = () => {
@@ -15,9 +16,9 @@ function App() {
         localStorage.setItem('festivals', JSON.stringify(festivals));
     }, [festivals]);
     return (
-        <div className="mx-auto mt-24 w-80">
-            <h1 className="text-center">倒数日</h1>
+        <div className="mx-auto mt-24">
             <Add festivals={festivals} setFestivals={setFestivals} />
+            {/* <Center festivals={festivals} /> */}
             <List festivals={festivals} setFestivals={setFestivals} />
         </div>
     );
